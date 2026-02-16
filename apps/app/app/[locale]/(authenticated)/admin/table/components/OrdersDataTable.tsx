@@ -509,7 +509,7 @@ export function OrdersDataTable<TData extends { _id: string }, TValue>({
                 deliveryArea: {
                     ...row.original.deliveryArea,
                     schedule: normalizeScheduleTime(editValues.deliveryAreaSchedule),
-                    sameDayDelivery: !!(editValues.puntoEnvio || row.original.puntoEnvio)
+                    sameDayDelivery: isExpressContext ? !!(editValues.puntoEnvio || row.original.puntoEnvio) : row.original.deliveryArea?.sameDayDelivery
                 },
                 items: processedItems,
                 deliveryDay: editValues.deliveryDay,

@@ -65,6 +65,8 @@ const updateOrderSchema = z.object({
     updatedAt: z.union([z.string(), z.date()]).optional(),
     deliveryDay: z.union([z.string(), z.date()]).optional(),
     estadoEnvio: z.enum(['pendiente', 'pidiendo', 'en-viaje', 'listo']).optional(),
+    puntoEnvio: z.any().optional(),
+    punto_de_venta: z.any().optional(),
     // Agrega aquí otros campos editables si es necesario
 });
 
